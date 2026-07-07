@@ -1,0 +1,4 @@
+unique_name: JesseTestRename
+object_type: metric_calc
+label: JesseTestRename
+expression: '[Measures].[m_factinternetsales_salesamount_sum] * 12'
