@@ -110,8 +110,7 @@ perspectives:
       - name: Customer Dimension
         hierarchies:
           - name: Customer Hierarchy
-            levels:
-              - Customer Name
+            level: Customer Name
         secondaryattributes:
           - d_firstname
           - d_lastname

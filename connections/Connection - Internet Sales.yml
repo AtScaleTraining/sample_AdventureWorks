@@ -1,6 +1,0 @@
-unique_name: Connection - Internet Sales
-object_type: connection
-label: Connection - Internet Sales
-as_connection: Postgres
-database: atscale
-schema: public

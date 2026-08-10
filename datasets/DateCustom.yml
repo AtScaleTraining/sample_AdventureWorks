@@ -1,7 +1,7 @@
 unique_name: DateCustom
 object_type: dataset
 label: DateCustom
-connection_id: Connection - Internet Sales
+connection_id: Connection - training_atscale
 table: datecustom
 
 columns:

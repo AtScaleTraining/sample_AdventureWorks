@@ -1,0 +1,6 @@
+unique_name: Connection - training_atscale
+object_type: connection
+label: Connection - training_atscale 
+as_connection: training_atscale                     
+database: training_atscale 
+schema: j_training
