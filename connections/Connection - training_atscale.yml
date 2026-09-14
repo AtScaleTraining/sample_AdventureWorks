@@ -3,4 +3,4 @@ object_type: connection
 label: Connection - training_atscale 
 as_connection: Training
 database: training_atscale 
-schema: j_training
+schema: adventureworks
