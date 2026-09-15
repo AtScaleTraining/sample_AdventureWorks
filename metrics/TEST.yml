@@ -1,0 +1,6 @@
+unique_name: TEST
+object_type: metric
+label: Test
+calculation_method: sum
+column: ''
+dataset: ''
