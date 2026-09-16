@@ -6,6 +6,7 @@ dimensions:
   - Size Dimension
   - Style Dimension
   - Weight
+  - Sales_Order_Line_Number
 drillthroughs:
   - unique_name: Customer Details
     attributes:

@@ -1,118 +1,112 @@
 unique_name: Geography Dimension
 object_type: dimension
 label: Geography Dimension
-type: standard
-
 hierarchies:
-
   - unique_name: Geography City
     label: Geography City
     folder: Customer Attributes
-
     levels:
-
       - unique_name: Country
-
       - unique_name: State
-
       - unique_name: City
-
         secondary_attributes:
-
           - unique_name: City Attribute
             label: City
             dataset: dim_geo_city
-            name_column: city
             key_columns:
               - city
-
+            name_column: city
       - unique_name: City Key
         is_hidden: true
-
   - unique_name: Geography Zip
     label: Geography Zip
     folder: Customer Attributes
-
     levels:
-
       - unique_name: Country Zip Hiearchy
-
       - unique_name: Zip Code
-
         secondary_attributes:
-
           - unique_name: Postal Code
             label: Postal Code
             dataset: dim_geo_postalcode
-            name_column: postalcode
             key_columns:
               - postalcode
-
+            name_column: postalcode
       - unique_name: Zip Key
         is_hidden: true
-
+  - unique_name: Geography Dimension Hierarchy
+    label: Geography Dimension Hierarchy
+    levels:
+      - unique_name: Geography Dimension Level
+      - unique_name: Geography Dimension Hierarchy Level
 level_attributes:
-
   - unique_name: City
     label: City
     dataset: dim_geo_city
-    name_column: citystatekey
     key_columns:
       - statekey
       - city
-
+    name_column: citystatekey
   - unique_name: Country
     label: Country
-    is_unique_key: true
     dataset: dim_geo_country
-    name_column: country
+    is_unique_key: true
     key_columns:
       - country
-
+    name_column: country
   - unique_name: Country Zip Hiearchy
     label: Country
     dataset: dim_geo_country
-    name_column: country
     key_columns:
       - country
-
+    name_column: country
   - unique_name: City Key
     label: GeoKey
+    dataset: dim_geo_city
     is_hidden: true
     is_unique_key: true
-    dataset: dim_geo_city
-    name_column: geographykey
     key_columns:
       - geographykey
-
+    name_column: geographykey
   - unique_name: Zip Key
     label: GeoKey
+    dataset: dim_geo_postalcode
     is_hidden: true
     is_unique_key: true
-    dataset: dim_geo_postalcode
-    name_column: geographykey
     key_columns:
       - geographykey
-
+    name_column: geographykey
   - unique_name: State
     label: State
-    is_unique_key: true
     dataset: dim_geo_state
-    name_column: state
+    is_unique_key: true
     key_columns:
       - statekey
-
+    name_column: state
   - unique_name: Zip Code
     label: Zip Code
-    is_unique_key: true
     dataset: dim_geo_postalcode
-    name_column: countrypostalcode
+    is_unique_key: true
     key_columns:
       - country
       - postalcode
-
+    name_column: countrypostalcode
+  - unique_name: Geography Dimension Level
+    label: Geography Dimension Level
+    contains_unique_names: false
+    dataset: dim_geo_city
+    is_unique_key: false
+    key_columns:
+      - statekey
+    name_column: statekey
+  - unique_name: Geography Dimension Hierarchy Level
+    label: Geography Dimension Hierarchy Level
+    contains_unique_names: false
+    dataset: dim_geo_state
+    is_unique_key: false
+    key_columns:
+      - country
+    name_column: country
 relationships:
-
   - from:
       dataset: dim_geo_city
       join_columns:
@@ -120,7 +114,6 @@ relationships:
     to:
       level: State
     type: snowflake
-
   - from:
       dataset: dim_geo_postalcode
       join_columns:
@@ -128,7 +121,6 @@ relationships:
     to:
       level: Country Zip Hiearchy
     type: snowflake
-
   - from:
       dataset: dim_geo_state
       join_columns:
@@ -136,3 +128,4 @@ relationships:
     to:
       level: Country
     type: snowflake
+type: standard
