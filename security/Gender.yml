@@ -1,0 +1,10 @@
+unique_name: Gender
+object_type: row_security
+label: Gender (Female)
+dataset: security_female
+filter_key_column: gender
+id_type: user
+ids_column: id
+scope: all
+secure_totals: false
+use_filter_key: true

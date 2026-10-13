@@ -1,0 +1,13 @@
+unique_name: security_female
+object_type: dataset
+label: SECURITY (Female Info)
+columns:
+  - name: gender
+    data_type: string
+  - name: id
+    data_type: string
+connection_id: Connection - training_atscale
+sql: |-
+  SELECT 'Female' AS Gender, 'pete' AS id 
+  UNION ALL
+  SELECT 'Male' AS Gender, 'rudy' AS id 

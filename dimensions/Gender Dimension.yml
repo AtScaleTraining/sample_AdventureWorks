@@ -1,24 +1,29 @@
 unique_name: Gender Dimension
 object_type: dimension
 label: Gender Dimension
-type: standard
-
 hierarchies:
-
   - unique_name: Gender Hierarchy
     label: Gender Hierarchy
     folder: Customer Attributes
-
     levels:
-
       - unique_name: Gender
-
 level_attributes:
-
   - unique_name: Gender
     label: Gender
-    is_unique_key: true
     dataset: dimgender
-    name_column: gendername
+    is_unique_key: true
     key_columns:
       - genderkey
+    name_column: gendername
+relationships:
+  - unique_name: dimgender_gendername_to_Gender (Female)
+    from:
+      dataset: dimgender
+      hierarchy: Gender Hierarchy
+      join_columns:
+        - gendername
+      level: Gender
+    to:
+      row_security: Gender (Female)
+    type: embedded
+type: standard
